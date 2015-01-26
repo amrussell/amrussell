@@ -3,6 +3,7 @@ branches:
   only:
     - gh-pages
 python:
+  - "3.3"
   - "2.7"
 install:
   - "pip install html5validator"
