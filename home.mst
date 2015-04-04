@@ -1,0 +1,15 @@
+<div class="jumbotron" style="text-align:center; opacity:0.9">
+        <h1>Welcome to Garager</h1>
+        <p>
+          Archive your cars easily and compare them with your friends'.
+          <br>
+          Join the {{numPeople}} people in the {{metroArea}} area already using Garager!
+        </p>
+        <a class="btn btn-primary" href="#register">Create Free Account</a>
+        <br>
+        or
+        <br>
+        <a href="#login">Sign In</a>
+        <br>
+        <p style="font-size:10pt">Want to look around first? Browse members' garages <a href="#">here</a>!</p>
+      </div>
