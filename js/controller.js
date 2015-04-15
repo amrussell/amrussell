@@ -36,10 +36,16 @@ function hashAction() {
 			loadHome();
 			break;
 		case '#login':
-			login();
+			loadLogin();
 			break;
 		case '#register':
-			register();
+			loadRegister();
+			break;
+		case '#car':
+			car();
+			break;
+		case '#admin':
+			loadAdmin();
 			break;
 		default:
 			location.hash = 'home';
@@ -68,22 +74,62 @@ function loadCarById(id) {
 	});
 }
 
-function login() {
+function loadLogin() {
 	$.get("login.mst",function(template) {
 		var subs = {
 			
 		};
 		var rendered = Mustache.render(template,subs);
 		$("#body").html(rendered);
+		$("#loginButton").click(function() {
+			console.log('tryna log in');
+			login($("#user").val(),$("#pass").val());
+		});
 	});
 }
 
-function register() {
+function loadRegister() {
 	$.get("register.mst",function(template) {
 		var subs = {
 			
 		};
 		var rendered = Mustache.render(template,subs);
 		$("#body").html(rendered);
+		$("#regButton").click(function() {
+			console.log('tryna register');
+			register($("#newUser").val(),$("#newPass").val());
+		});
 	});
+}
+
+function car() {
+	$.get("car.mst",function(template) {
+		var subs = {
+			"carYear": "2004",
+			"carMake": "Lexus",
+			"carModel": "LS430",
+			"carEngine": "4.3L V8",
+			"carTransmission": "6AT",
+			"imgName": "ls430.jpg"
+		};
+		var rendered = Mustache.render(template,subs);
+		$("#body").html(rendered);
+	});
+}
+
+function loadAdmin() {
+	Parse.initialize("QWJvHi4Y9qdtfRb154MwHgMkEHjiE4oXUYmQhOeI", "kwkww4itsojbAkUEWorqdSu1vFV6bjROY2jV80Nx");
+	if(Parse.User.current() == null) {
+		alert("You're not signed in.");
+		location.hash = "home";
+	}
+	else {
+		$.get("admin.mst",function(template) {
+			var subs = {
+			};
+			var rendered = Mustache.render(template,subs);
+			$("#body").html(rendered);
+		});
+	}
+	
 }

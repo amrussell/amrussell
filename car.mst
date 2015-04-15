@@ -1,0 +1,31 @@
+<style>
+	img {
+		-moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipV;
+    -ms-filter: "FlipV";	
+	}
+</style>
+<div class="jumbotron">
+	<div class="container">
+		<div class="col-md-2"></div>
+		<div class="col-md-3">
+			<h4>Year</h4>
+			<p>{{carYear}}</p>
+			<h4>Make</h4>
+			<p>{{carMake}}</p>
+			<h4>Model</h4>
+			<p>{{carModel}}</p>
+			<h4>Engine</h4>
+			<p>{{carEngine}}</p>
+			<h4>Transmission</h4>
+			<p>{{carTransmission}}</p>
+		</div>
+		<div class="col-md-5">
+			<img style="width:100%" src="images/{{imgName}}" />
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+</div>

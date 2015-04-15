@@ -1,0 +1,3 @@
+<div class="jumbotron">
+	<button id="logoutButton" class="btn btn-danger">Log Out</button>
+</div>
