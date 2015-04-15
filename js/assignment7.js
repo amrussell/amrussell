@@ -97,11 +97,11 @@ function deleteCar(id) {
 	});
 }
 
-function register(user, pass) {
+function register(username, pass) {
 	Parse.initialize("QWJvHi4Y9qdtfRb154MwHgMkEHjiE4oXUYmQhOeI", "kwkww4itsojbAkUEWorqdSu1vFV6bjROY2jV80Nx");
 	var user = new Parse.User();
 
-	user.set("username", user);
+	user.set("username", username);
 	user.set("password", pass);
 
   	user.signUp(null, {
@@ -131,4 +131,5 @@ function login(user, pass) {
 
 function logout() {
 	Parse.User.logOut();
+	location.hash = "home";
 }

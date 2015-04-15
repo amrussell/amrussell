@@ -129,6 +129,9 @@ function loadAdmin() {
 			};
 			var rendered = Mustache.render(template,subs);
 			$("#body").html(rendered);
+			$("#logoutButton").click(function() {
+				logout();
+			});
 		});
 	}
 	
